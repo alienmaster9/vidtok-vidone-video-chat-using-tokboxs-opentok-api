@@ -20,14 +20,14 @@ Create 1:1 video chats that will engage your users. How about offering live vide
 
 == Installation ==
 
-To get started with your Vidtok's vid{show} install please use the following instructions.
+To get started with your Vidtok's vid{one} install please use the following instructions.
 
 1. Upload the `vidone` directory to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Register with Vidtok via the vid{one} WordPress settings page.
 1. Go to your widget section of your WordPress dashboard and look for the vid{one} Widget. 
-1. Place the vid{one} Widget into your active siderbar widgets. <em>Note that you must have dynamic_sidebar() 
-activate in your theme for the plugin to work correctly.</em>
+1. Place the vid{one} Widget into your active siderbar widgets. `Note that you must have dynamic_sidebar() 
+activate in your theme for the plugin to work correctly.`
 
 
 == Screenshots ==
