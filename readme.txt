@@ -12,7 +12,7 @@ Host live 1:1 video chats directly from Wordpress.
  
 == Description ==
 
-vid{one} was created to allow WordPress users the ability to create and host 1:1 video chats on their website. vid{one} is part of an expanding set of plugins created by <a href="http://vidtok.co">Vidtok</a> to help bring streaming video to all.
+vid{one} was created to allow WordPress users the ability to create and host 1:1 video chats on their website. vid{one} is part of an expanding set of plugins created by <a href="http://vidtok.co" target="_blank">Vidtok</a> to help bring streaming video to all.
 
 Create 1:1 video chats that will engage your users. How about offering live video support on your website or even giving your users the ability to chat with other users and have a personal 1:1 experience? The usage of the Vidtok vid{one} plugin has endless possibilities, we offer the tools needed to take your website or blog to the next level.
 
@@ -22,7 +22,7 @@ Create 1:1 video chats that will engage your users. How about offering live vide
 
 To get started with your Vidtok's vid{show} install please use the following instructions.
 
-1. Upload the `vidport` directory to the `/wp-content/plugins/` directory.
+1. Upload the `vidone` directory to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Register with via the vid{one} Wordpress settings page.
 1. Place the vid{one} widget into your siderbar.
@@ -30,9 +30,7 @@ To get started with your Vidtok's vid{show} install please use the following ins
 == Screenshots ==
 
 1. Vidtok's vid{one} Plugin Widget
-
 2. Connect to existing or create new video chat session.
-
 3. vid{one} video chat window.
 
 
