@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Host live 1:1 video chats directly from Wordpress.
+Host live 1:1 video chats directly from Wordpress using Vidtok's vid{one} plugin. Ditch Google Hangouts and Skype and enjoy your time with friends on your very own website without having to install any additional software.
  
 == Description ==
 
