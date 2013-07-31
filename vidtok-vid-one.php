@@ -33,30 +33,17 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 		
 	/*PLUGIN WWW PATH*/
 		define("VIDONE_WWWPATH", str_replace($_SERVER['DOCUMENT_ROOT'], '', VIDONE_PLUGINFULLDIR));	
+		
 
-/* JQUERY
+/* ON WP LOAD
 /*---------------------------*/
 	
 	/*ADD ACTION*/
-		add_action('wp_enqueue_scripts', 'prefix_load_scripts');
+		add_action('wp', 'wp_set');
 	
-	/*REQUIRE 1.9.1*/		
-		function prefix_load_scripts() {
-			if(is_admin()) return;
-		 
-			global $wp_scripts;
-		 
-			if($wp_scripts->registered['jquery']->ver != '1.8.3'){ 
-				
-				wp_deregister_script( 'jquery' );
-				wp_enqueue_script('jquery', 'http://code.jquery.com/jquery-1.8.3.min.js');
-				
-			}else{
-				
-				wp_enqueue_script('jquery');
-				
-			}
-		}
+	/*VID{ONE} SETUP*/
+		include_once(VIDONE_PLUGINFULLDIR.'functions/wp.php');
+	
 	
 	
 /* ACTIVATION
@@ -108,26 +95,6 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 		include_once(VIDONE_PLUGINFULLDIR.'functions/admin/options.php'); 
 
 
-
-
-/*  WIDGET
-/*---------------------------*/
-	
-	/*OPTIONS*/
-		$options = get_option('vidone_options');
-		
-		if($options['registered'] == 'yes'){
-	
-			/*ADD VID{ONE} WIDGET*/
-				add_action('widgets_init', 'vidone_widget');
-				 
-			/*WIDGET IMPLEMENATION*/
-				include_once(VIDONE_PLUGINFULLDIR.'functions/dashboard/widgets.php'); 
-		
-		}
-
-
-
 /*  AJAX REQEUST :: CREATE SESSION
 /*---------------------------*/
 	
@@ -145,7 +112,7 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 	
 	/*ADD ACTION*/
 		add_action('wp_ajax_join_session', 'vidone_join_session');  
-		add_action('wp_ajax_nopriv_join_session', 'vidone_join_session');
+		add_action('wp_ajax_nopriv_join_session', 'vidone_join_session'); 
 		
 	/*CREATE SESSION*/	
 		include_once(VIDONE_PLUGINFULLDIR.'functions/widget/join.php'); 
@@ -162,9 +129,47 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 	/*CREATE SESSION*/	
 		include_once(VIDONE_PLUGINFULLDIR.'functions/widget/invite.php');   
 
+	
+/*  WIDGET SETTINGS
+/*---------------------------*/
 
+	/*ADD ACTION*/
+		add_action('wp_head', 'vidone_registered');
 
-
-
-
-		
+	/*DISPLAY SETTINGS*/	
+		function vidone_registered()
+			{ 
+				
+				$options = get_option('vidone_options');  ?>
+				
+                <script type="text/javascript">
+					VIDONE_REGISTERED 		= '<?php echo $options['registered']; ?>';
+					VID						= ''; 
+					TOKBOX_SESSION_ID		= '';
+					TOKBOX_TOKEN			= '';		
+					VIDONE_PLUGIN_URL		= '<?php echo VIDONE_PLUGINFULLURL; ?>';
+					VIDONE_INVITE_URL		= "http://<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?vid="; 
+					DOMAIN					= '<?php echo DOMAIN; ?>';  
+					VAPI					= '<?php $options = get_option('vidone_options'); echo $options['vapi']; ?>';
+			 
+					function tw_click(e) {
+						u = location.href;
+						t = document.title; 
+						text = "<?php echo urlencode('Join my live video chat! http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>?vid=" + VID + " <?php echo urlencode('Made possible using @vidtok vid{one} Wordpress Plugin.'); ?>";
+						window.open("http://twitter.com/intent/tweet?text=" + text, 'sharer', 'toolbar=0,status=0,width=500,height=360'); 
+						return false;
+					}
+					
+					function fbs_click() {
+						url = '<?php echo urlencode('http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>?vid=' + VID;
+						title = 'Join my live video chat!';
+						image = 'http://vidtok.co/images/logos/vidtok-logo-v-large.png';
+						summary = 'Made possible using @vidtok vid{one} Wordpress Plugin.';
+						window.open('http://www.facebook.com/sharer.php?s=100&p[url]=' + url + '&p[title]=' + title + '&p[summary]=' + summary + '&p[images][0]=' + image, 'sharer', 'toolbar=0,status=0,width=500,height=360');
+						return false;
+					}
+					
+				</script>
+                
+                
+	  <?php }	

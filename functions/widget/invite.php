@@ -11,6 +11,11 @@
 				$valid 		= validateEmail($email);
 				$subject 	= 'Vidtok :: Video Chat Invitation';  
 				$message	= "
+								<html>
+								<head>
+								  <title>Vidtok :: Video Chat Invitation</title> 
+								</head>
+								<body>
 								
 								<h3>vid{one} 1:1 video chat invitation</h3>
 								
@@ -25,13 +30,13 @@
 								the Vidtok team</p><br/>
 								
 								If you have any questions please contact <a href='mailto:support@vidtok.co'>support@vidtok.co</a>.		
-		
+								</body>
+								</html> 
 							";
 				
-				$headers  = "From: the Vidtok team <messages@vidtok.co>\r\n";
-				$headers .= "Reply-To: the Vidtok team <messages@vidtok.co>\r\n";			  
-				$headers .= "MIME-Version: 1.0\r\n";
-				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";			  
+				$headers  = "From: the Vidtok team <messages@vidtok.co>" . "\r\n";		  
+				$headers .= 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";		  
 				   
 			/*Mail*/
 				if($valid == 0){
