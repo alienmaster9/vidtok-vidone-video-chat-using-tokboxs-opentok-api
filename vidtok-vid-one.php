@@ -33,25 +33,7 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 		
 	/*PLUGIN WWW PATH*/
 		define("VIDONE_WWWPATH", str_replace($_SERVER['DOCUMENT_ROOT'], '', VIDONE_PLUGINFULLDIR));	
-	
-	
 
-/*  PLUGIN INITALIZATION
-/*---------------------------*/
-	
-	/*OPTIONS*/
-		$options = get_option('vidone_options');
-		
-		if($options['registered'] == 'yes'){
-	
-			/*ADD ACTION*/
-				add_action('init', 'vidone_init_script');
-			
-			/*ADD VID{ONE} SCRIPTS*/
-				include_once(VIDONE_PLUGINFULLDIR.'functions/installation/init.php');
-		
-		}
-	
 	
 
 /* ACTIVATION
