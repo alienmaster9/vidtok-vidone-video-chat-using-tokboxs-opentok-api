@@ -34,8 +34,31 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 	/*PLUGIN WWW PATH*/
 		define("VIDONE_WWWPATH", str_replace($_SERVER['DOCUMENT_ROOT'], '', VIDONE_PLUGINFULLDIR));	
 
+/* JQUERY
+/*---------------------------*/
 	
-
+	/*ADD ACTION*/
+		add_action('wp_enqueue_scripts', 'prefix_load_scripts');
+	
+	/*REQUIRE 1.9.1*/		
+		function prefix_load_scripts() {
+			if(is_admin()) return;
+		 
+			global $wp_scripts;
+		 
+			if($wp_scripts->registered['jquery']->ver != '1.9.1'){ 
+				
+				wp_deregister_script( 'jquery' );
+				wp_enqueue_script('jquery', 'http://code.jquery.com/jquery-1.9.1.min.js');
+				
+			}else{
+				
+				wp_enqueue_script('jquery');
+				
+			}
+		}
+	
+	
 /* ACTIVATION
 /*---------------------------*/
 
