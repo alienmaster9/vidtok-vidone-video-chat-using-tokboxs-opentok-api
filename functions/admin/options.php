@@ -30,16 +30,32 @@
 				if(($email != '') && ($password != '') && ($valid != 0)){ 
 			
 					/*REGISTER*/	
-						$domain	= DOMAIN;
-						$url	= 'http://vidtok.co/vidone/register';
-						$args	= array('method' => 'POST', 'body' => array('fname' => $fname, 'lname' => $lname, 'email' => $email, 'password' =>$password, 'domain' => $domain));
+						$domain		= DOMAIN;
+						$reg_url	= 'http://vidtok.co/vidone/register';
+						$args		= array('method' => 'POST', 'body' => array('fname' => $fname, 'lname' => $lname, 'email' => $email, 'password' =>$password, 'domain' => $domain));
 						
-						$response = wp_remote_post($url, $args);
+						$response = wp_remote_post($reg_url, $args);
 					
-					/*GET ACCOUNT*/           	
+					/*VARIABLES*/	
 						$url 		= 'http://vidtok.co/vidone/get_account?email='.$email; 
-						$content 	= file_get_contents($url);
-						$json		= json_decode($content, true);
+						
+					/*GET ACCOUNT*/           	
+						if( ini_get('allow_url_fopen') ) {
+
+							$content 	= file_get_contents($url);
+							$json		= json_decode($content, true);
+						
+						}else{
+						
+							$ch = curl_init(); 
+							$timeout = 0; 
+							curl_setopt ($ch, CURLOPT_URL, $url); 
+							curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
+							$content = curl_exec($ch); 
+							$json		= json_decode($content, true);
+							curl_close($ch); 
+						
+						}
 
 					/*STORE VALUES IN OPTION ARRAY*/		
 						$update = array('vapi' => $json['vapi'], 'registered' => 'yes', 'fname' => $fname, 'lname' => $lname, 'email' => $email);  
