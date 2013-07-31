@@ -1,11 +1,11 @@
     
-    <?php wp_enqueue_style('vidone', plugins_url() . '/vidone/css/vidone.css') ?>
-    <?php wp_enqueue_style('bootstrap', plugins_url() . '/vidone/css/bootstrap.min.css') ?>
+    <?php wp_enqueue_style('vidone', plugins_url() . '/vidtok-vidone-video-chat-using-tokboxs-opentok-api/css/vidone.css') ?>
+    <?php wp_enqueue_style('bootstrap', plugins_url() . '/vidtok-vidone-video-chat-using-tokboxs-opentok-api/css/bootstrap.min.css') ?>
     
     <?php wp_enqueue_script('tokbox', 'http://static.opentok.com/v1.1/js/TB.min.js') ?>
-    <?php wp_enqueue_script('watermark', plugins_url() . '/vidone/js/jquery.watermark.js', array('jquery')) ?>
-    <?php wp_enqueue_script('purl', plugins_url() . '/vidone/js/purl.js', array('jquery')); ?>
-	<?php wp_enqueue_script('vidtok-vidone', 'http://static.vidtok.co/vidone/v1.0/stable/vidtok.vidone.v1.0.min.js', array('jquery')) ?>  
+    <?php wp_enqueue_script('watermark', plugins_url() . '/vidtok-vidone-video-chat-using-tokboxs-opentok-api/js/jquery.watermark.js', array('jquery')) ?>
+    <?php wp_enqueue_script('purl', plugins_url() . '/vidtok-vidone-video-chat-using-tokboxs-opentok-api/js/purl.js', array('jquery')); ?>
+	<?php wp_enqueue_script('vidtok-vidone', 'http://static.vidtok.co/vidone/v1.0/stable/vidtok.vidone.v1.0.min.js', array('jquery')) ?> 
     
     <script type="text/javascript">
 	
