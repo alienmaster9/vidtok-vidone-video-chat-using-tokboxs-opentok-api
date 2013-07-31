@@ -46,10 +46,10 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 		 
 			global $wp_scripts;
 		 
-			if($wp_scripts->registered['jquery']->ver != '1.9.1'){ 
+			if($wp_scripts->registered['jquery']->ver != '1.8.3'){ 
 				
 				wp_deregister_script( 'jquery' );
-				wp_enqueue_script('jquery', 'http://code.jquery.com/jquery-1.9.1.min.js');
+				wp_enqueue_script('jquery', 'http://code.jquery.com/jquery-1.8.3.min.js');
 				
 			}else{
 				
