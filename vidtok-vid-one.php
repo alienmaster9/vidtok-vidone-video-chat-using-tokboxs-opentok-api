@@ -3,7 +3,7 @@
 Plugin Name: 	vid{one} video chat using Tokbox
 Plugin URI: 	http://vidtok.co/vidone
 Description: 	vid{one} was created to allow WordPress users the ability to create and host 1:1 video chats on their website.
-Version: 		1.0
+Version: 		1.1
 Author: 		the Blacc Spot Media team
 Author URI: 	http://blaccspot.com
 License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
