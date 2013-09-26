@@ -40,4 +40,4 @@ To get started with your Vidtok's vid{one} install please use the following inst
 * Initial Release
 
 = 1.1 =
-Improvements & Bug Fixes
+* Bug fixs and improvements
