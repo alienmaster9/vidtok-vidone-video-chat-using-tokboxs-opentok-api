@@ -73,15 +73,6 @@ License: 		GPLv3 http://www.gnu.org/licenses/gpl.html
 		include_once(VIDONE_PLUGINFULLDIR.'functions/installation/uninstall.php');
 
 
-/* 	ADMIN SETTINGS
-/*---------------------------*/
-
-	/*SAVE SETTINGS*/
-		add_action('admin_init', 'vidone_admin_options'); 
-	
-	/*SAVE SETTING IMPLEMENTATION*/
-		include_once(VIDONE_PLUGINFULLDIR.'functions/admin/options.php'); 
-
 
 /*  AJAX REQEUST :: CREATE SESSION
 /*---------------------------*/
