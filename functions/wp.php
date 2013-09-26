@@ -7,6 +7,8 @@
 	function wp_set()
 		{
 			
+			 
+			
 			/*UPDATE JQUERY*/
 				add_action('wp_enqueue_scripts', 'prefix_load_scripts');
 				
