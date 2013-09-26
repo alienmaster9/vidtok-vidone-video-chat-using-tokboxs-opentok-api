@@ -3,8 +3,8 @@ Contributors: blaccspotmedia
 Donate link: http://vidtok.co
 Tags: Chat, community, discussion, free, Google hangouts, hangouts, Live, live video, networks, OpenTok, plugin, social networking, talk show, TokBox, video, video broadcast, video chat, video conference, video chat, webcam, widget, WordPress, vidtok, streaming video
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: 1.0
+Tested up to: 3.6.1
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
