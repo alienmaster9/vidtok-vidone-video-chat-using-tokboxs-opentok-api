@@ -22,9 +22,9 @@ Create 1:1 video chats that will engage your users. How about offering live vide
 
 To get started with your Vidtok's vid{one} install please use the following instructions.
 
-1. Upload the `vidone` directory to the `/wp-content/plugins/` directory.
+1. Upload the `vidone plugin` directory to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Register with Vidtok via the vid{one} WordPress settings page.
+
 
 
 == Screenshots ==
